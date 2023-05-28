@@ -46,12 +46,12 @@
 
 .chooseWeapon:nth-child(1) {
     place-self: center start;
-    background-image: radial-gradient(circle at bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    background-image: var(--Paper-Gradient);
 }
 
 .chooseWeapon:nth-child(2) {
     place-self: center end;
-    background-image: radial-gradient(circle at bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    background-image: var(--Scissors-Gradient);
 }
 
 .chooseWeapon:nth-child(3) {
@@ -59,7 +59,7 @@
     grid-column-start: 2;
     position: relative;
     left: -55px;
-    background-image: radial-gradient(circle at bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    background-image: var(--Rock-Gradient);
 }
 
 .gameBackground {
