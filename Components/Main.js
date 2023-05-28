@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Barlow_Semi_Condensed } from "next/font/google";
 import styles from "/styles/Main.module.css";
 import ChooseWeapon from "./ChooseWeapon";
-import RuleContainer from "./RuleContainer";
+import GameStart from "./GameStart";
 
 const barlow = Barlow_Semi_Condensed({
   subsets: ["latin"],
@@ -10,11 +10,12 @@ const barlow = Barlow_Semi_Condensed({
 });
 
 const Main = ({ showRules, setShowRules }) => {
-  console.log(showRules);
+  const [playerImg, setPlayerImg] = useState(null);
   return (
     <>
       <main className={`${styles.main} ${barlow.className}`}>
-        <ChooseWeapon />
+        {/* <ChooseWeapon /> */}
+        <GameStart playerImg={playerImg} />
         <button
           disabled={showRules}
           onClick={() => setShowRules((prevState) => (prevState = true))}

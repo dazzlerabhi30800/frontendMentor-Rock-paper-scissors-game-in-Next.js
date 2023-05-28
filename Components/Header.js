@@ -7,7 +7,7 @@ const barlow = Barlow_Semi_Condensed({
   weight: ["600", "700"],
 });
 
-const Header = () => {
+const Header = ({ score }) => {
   return (
     <header className={`${styles.header} ${barlow.className}`}>
       <h1 className={`${styles.heading}`}>
@@ -18,7 +18,7 @@ const Header = () => {
         Scissors
       </h1>
       <p className={styles.score}>
-        Score <span>0</span>
+        Score <span>{score}</span>
       </p>
     </header>
   );
