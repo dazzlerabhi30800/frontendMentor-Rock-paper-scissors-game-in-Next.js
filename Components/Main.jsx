@@ -13,13 +13,6 @@ const Main = ({ showRules, setShowRules }) => {
   console.log(showRules);
   return (
     <>
-      <style jsx>
-        {`
-          main {
-            position: ${showRules} ? absolute : relative;
-          }
-        `}
-      </style>
       <main className={`${styles.main} ${barlow.className}`}>
         <ChooseWeapon />
         <button

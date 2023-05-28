@@ -22,14 +22,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* {!showRules && <Header />} */}
       <Header showRules={showRules} />
       <Main showRules={showRules} setShowRules={setShowRules} />
-      {showRules && (
-        <section className={barlow.className}>
-          <RuleContainer showRules={showRules} setShowRules={setShowRules} />
-        </section>
-      )}
+      <section className={`${barlow.className}`}>
+        <RuleContainer showRules={showRules} setShowRules={setShowRules} />
+      </section>
     </>
   );
 }
