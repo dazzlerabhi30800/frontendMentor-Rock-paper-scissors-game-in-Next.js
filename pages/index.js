@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Barlow_Semi_Condensed } from "next/font/google";
 // import styles from "/styles/Home.module.css";
 import Header from "@/Components/Header";
 import Main from "@/Components/Main";
+import RuleContainer from "@/Components/RuleContainer";
 
 const barlow = Barlow_Semi_Condensed({
   subsets: ["latin"],
@@ -11,6 +13,7 @@ const barlow = Barlow_Semi_Condensed({
 });
 
 export default function Home() {
+  const [showRules, setShowRules] = useState(false);
   return (
     <>
       <Head>
@@ -19,8 +22,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <Main />
+      {/* {!showRules && <Header />} */}
+      <Header showRules={showRules} />
+      <Main showRules={showRules} setShowRules={setShowRules} />
+      {showRules && (
+        <section className={barlow.className}>
+          <RuleContainer showRules={showRules} setShowRules={setShowRules} />
+        </section>
+      )}
     </>
   );
 }
