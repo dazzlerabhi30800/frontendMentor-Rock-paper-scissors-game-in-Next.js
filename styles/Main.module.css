@@ -1,0 +1,129 @@
+.main {
+    width: 90%;
+    margin: 3rem auto;
+    max-width: 800px;
+    padding: 1rem;
+}
+
+.chooseWrapper {
+    --triangle-height: 60%;
+    --triangle-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center start;
+    grid-gap: .5rem;
+    background-image: url('/images/bg-triangle.svg');
+    background-size: var(--triangle-width) var(--triangle-height);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+    position: relative;
+}
+
+
+.chooseWeapon {
+    --shadow-spread: 40px;
+    border-radius: 50%;
+    padding: .8rem;
+    position: relative;
+    transition: 0.4s linear;
+}
+
+.chooseWeapon::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 0px 10px rgba(255, 255, 255, 0);
+    transform: scale(1);
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+
+.chooseWeapon:nth-child(1) {
+    place-self: center start;
+    background-image: radial-gradient(circle at bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.chooseWeapon:nth-child(2) {
+    place-self: center end;
+    background-image: radial-gradient(circle at bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.chooseWeapon:nth-child(3) {
+    place-self: center start;
+    grid-column-start: 2;
+    position: relative;
+    left: -55px;
+    background-image: radial-gradient(circle at bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+
+.gameBackground {
+    background: #e9fcfc;
+    border-radius: 50%;
+    padding: .8rem 1rem;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+.chooseWeapon img {
+    width: 45px;
+    height: 45px;
+}
+
+
+@media (hover:hover) {
+    .chooseWeapon {
+        cursor: pointer;
+    }
+
+    .chooseWeapon:hover::after {
+        box-shadow: 1px 1px 0px var(--shadow-spread) rgba(255, 255, 255, 0.4);
+        transform: scale(1.1);
+    }
+}
+
+
+@media (width > 700px) {
+    .chooseWrapper {
+        --triangle-height: 60%;
+        --triangle-width: 40%;
+        height: 50vh;
+    }
+
+    .chooseWeapon {
+        --shadow-spread: 70px;
+    }
+
+    .chooseWeapon:nth-child(1) {
+        place-self: center center;
+        position: relative;
+        left: 55px;
+    }
+
+    .chooseWeapon:nth-child(2) {
+        place-self: center center;
+        position: relative;
+        left: -45px;
+    }
+
+    .chooseWeapon:nth-child(3) {
+        place-self: center start;
+        grid-column-start: 2;
+        position: relative;
+        top: -10px;
+        left: -55px;
+    }
+
+    .gameBackground {
+        padding: 1rem;
+    }
+
+    .chooseWeapon img {
+        width: 70px;
+        height: 70px;
+    }
+}
