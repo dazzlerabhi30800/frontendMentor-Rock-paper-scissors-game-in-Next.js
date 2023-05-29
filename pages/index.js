@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Barlow_Semi_Condensed } from "next/font/google";
@@ -14,7 +14,22 @@ const barlow = Barlow_Semi_Condensed({
 
 export default function Home() {
   const [showRules, setShowRules] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(null);
+
+  useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("gamescore"));
+    setScore(data > 0 ? parseInt(data) : 0);
+  }, []);
+
+  useEffect(() => {
+    if (score > 0) {
+      localStorage.setItem("gamescore", JSON.stringify(score));
+    } else if (score === 0) {
+      localStorage.setItem("gamescore", 0);
+    } else {
+      return;
+    }
+  }, [score]);
 
   return (
     <>
