@@ -1,391 +1,415 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 70vh;
-    gap: 1rem;
-    width: 95%;
-    margin: 0 auto;
-    transform: translateY(80px);
-    max-width: 1000px;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+  gap: 1rem;
+  width: 95%;
+  margin: 0 auto;
+  transform: translateY(80px);
+  max-width: 1000px;
+  padding: 1rem;
 }
-
 
 .chooseWrapper {
-    --triangle-height: 55%;
-    --triangle-width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center start;
-    grid-gap: .5rem;
-    background-image: url('/images/bg-triangle.svg');
-    background-size: var(--triangle-width) var(--triangle-height);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 50vh;
-    position: relative;
+  --triangle-height: 55%;
+  --triangle-width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center start;
+  grid-gap: 0.5rem;
+  background-image: url("/images/bg-triangle.svg");
+  background-size: var(--triangle-width) var(--triangle-height);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+  position: relative;
 }
 
-
 .chooseWeapon {
-    --shadow-color: hsl(34, 75%, 36%);
-    --shadow-spread: 40px;
-    border-radius: 50%;
-    padding: .8rem;
-    position: relative;
-    transition: 0.4s linear;
-    box-shadow: 0px 5px 0px 2px var(--shadow-color);
+  --shadow-color: hsl(34, 75%, 36%);
+  --shadow-spread: 40px;
+  border-radius: 50%;
+  padding: 0.8rem;
+  position: relative;
+  transition: 0.4s linear;
+  box-shadow: 0px 5px 0px 2px var(--shadow-color);
 }
 
 .chooseWeapon::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 1px 1px 0px 10px rgba(255, 255, 255, 0),
-        1px 1px 0px 30px rgba(255, 255, 255, 0);
-    transform: scale(0);
-    transform-origin: center;
-    z-index: -1;
-    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 0px 10px rgba(255, 255, 255, 0),
+    1px 1px 0px 30px rgba(255, 255, 255, 0);
+  transform: scale(0);
+  transform-origin: center;
+  z-index: -1;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-
 .chooseWeapon:nth-child(1) {
-    --shadow-color: hsl(230, 91%, 56%);
-    place-self: center start;
-    background-image: var(--Paper-Gradient);
+  --shadow-color: hsl(230, 91%, 56%);
+  place-self: center start;
+  background-image: var(--Paper-Gradient);
 }
 
 .chooseWeapon:nth-child(2) {
-    place-self: center end;
-    background-image: var(--Scissors-Gradient);
+  place-self: center end;
+  background-image: var(--Scissors-Gradient);
 }
 
 .chooseWeapon:nth-child(3) {
-    --shadow-color: hsl(349, 84%, 29%);
-    place-self: center start;
-    grid-column-start: 2;
-    position: relative;
-    left: -55px;
-    background-image: var(--Rock-Gradient);
+  --shadow-color: hsl(349, 84%, 29%);
+  place-self: center start;
+  grid-column-start: 2;
+  position: relative;
+  left: -55px;
+  background-image: var(--Rock-Gradient);
 }
 
 .gameBackground {
-    background: #e9fcfc;
-    border-radius: 50%;
-    padding: .8rem 1rem;
-    box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.25) inset;
+  background: #e9fcfc;
+  border-radius: 50%;
+  padding: 0.8rem 1rem;
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.25) inset;
 }
 
 .gameBackground img {
-    width: 45px;
-    height: 45px;
+  width: 45px;
+  height: 45px;
 }
-
-
-
 
 /* Rule Button */
 .ruleButton {
-    --rule-button-color: #bfbebe;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 11px 2.5rem;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    border-radius: 8px;
-    border: 2px solid var(--rule-button-color);
-    background: rgba(0, 0, 0, 0.15);
-    color: var(--rule-button-color);
-    outline: none;
-    text-transform: uppercase;
-    transition: 0.4s linear;
+  --rule-button-color: #bfbebe;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 11px 2.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  border: 2px solid var(--rule-button-color);
+  background: rgba(0, 0, 0, 0.15);
+  color: var(--rule-button-color);
+  outline: none;
+  text-transform: uppercase;
+  transition: 0.4s linear;
 }
 
 .ruleButton:disabled {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-    user-select: none;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
 }
-
 
 /* RuleContainer */
 .ruleContainer {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(1, 100%);
-    place-items: center center;
-    gap: 2rem;
-    width: 100%;
-    height: 100vh;
-    top: 0%;
-    left: 0%;
-    background: #e8e7e7;
-    padding: 1rem;
-    border-radius: 0px;
-    transition: 0.4s ease-in-out;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  place-items: center center;
+  gap: 2rem;
+  width: 100%;
+  height: 100vh;
+  top: 0%;
+  left: 0%;
+  background: #e8e7e7;
+  padding: 1rem;
+  border-radius: 0px;
+  transition: 0.4s ease-in-out;
 }
 
-
 .ruleContainer>h2 {
-    color: var(--Dark-Text);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.7rem;
+  color: var(--Dark-Text);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.7rem;
 }
 
 .ruleContainer>button {
-    outline: none;
-    border: none;
-    background: transparent;
-    color: var(--Dark-Text);
-    font-size: 1.5rem;
-    grid-row-start: 3;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--Dark-Text);
+  font-size: 1.5rem;
+  grid-row-start: 3;
 }
 
 /* Start Game */
 .gameStart {
-    display: grid;
-    grid-template-areas: "one three"
-        "two two";
-    gap: 3rem;
-    padding: 3rem 1rem;
-    place-items: center center;
+  display: grid;
+  grid-template-areas:
+    "one three"
+    "two two";
+  gap: 3rem;
+  padding: 3rem 1rem;
+  place-items: center center;
 }
 
 .resultWrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1.5rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+  text-align: center;
 }
 
 .player1 {
-    grid-area: one;
+  grid-area: one;
 }
 
-
 .computerPlayer {
-    grid-area: three;
+  grid-area: three;
 }
 
 .resultWrapper>span {
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .playerChose {
-    width: fit-content;
-    margin: 0 auto;
-    background-image: var(--Scissors-Gradient);
-    border-radius: 50%;
-    padding: 1rem;
-    --shadow-color: hsl(34, 75%, 36%);
-    box-shadow: 0px 5px 0px 2px var(--shadow-color);
+  width: fit-content;
+  margin: 0 auto;
+  background-image: var(--Scissors-Gradient);
+  border-radius: 50%;
+  padding: 1rem;
+  --shadow-color: hsl(34, 75%, 36%);
+  box-shadow: 0px 5px 0px 2px var(--shadow-color);
 }
 
 .playerChose.winner {
-    position: relative;
+  position: relative;
+}
+
+.playerChose.rock {
+  --shadow-color: hsl(349, 84%, 29%);
+  background-image: var(--Rock-Gradient);
+}
+
+.playerChose.paper {
+  --shadow-color: hsl(230, 91%, 56%);
+  background-image: var(--Paper-Gradient);
 }
 
 .playerChose.winner::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 1px 1px 0px 10px rgba(255, 255, 255, 0.35),
-        1px 1px 0px 30px rgba(255, 255, 255, 0.25),
-        1px 1px 0px 60px rgba(255, 255, 255, 0.2),
-        1px 1px 0px 90px rgba(255, 255, 255, 0.1);
-    transform-origin: center;
-    transform: scale(1);
-    z-index: -1;
-    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
-    animation: winnerAnimation 2s infinite alternate-reverse;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 0px 10px rgba(255, 255, 255, 0.35),
+    1px 1px 0px 30px rgba(255, 255, 255, 0.25),
+    1px 1px 0px 60px rgba(255, 255, 255, 0.2),
+    1px 1px 0px 90px rgba(255, 255, 255, 0.1);
+  transform-origin: center;
+  transform: scale(1);
+  z-index: -1;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: winnerAnimation 2s infinite alternate-reverse;
 }
-
 
 @keyframes winnerAnimation {
-    from {
-        transform: scale(0);
-    }
+  from {
+    transform: scale(0);
+  }
 
-    to {
-        transform: scale(1);
-    }
+  to {
+    transform: scale(1);
+  }
 }
 
-
 .gameStatus {
-    grid-area: two;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
+  grid-area: two;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin: 10px 0;
 }
 
 .gameStatus>h3 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .gameStatus>button {
-    border: none;
-    outline: none;
-    padding: 12px 2rem;
-    text-transform: uppercase;
-    border-radius: 5px;
-    color: var(--Dark-Text);
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    font-weight: 600;
+  border: none;
+  outline: none;
+  padding: 12px 2rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: var(--Dark-Text);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
 .playerChose:nth-child(3) {
-    /* order: 2; */
-    grid-area: two;
+  /* order: 2; */
+  grid-area: two;
 }
 
-
-
-
-@media (hover:hover) {
-    .chooseWeapon {
-        cursor: pointer;
-    }
-
-
-    .chooseWeapon:hover {
-        transform: scale(1.1);
-    }
-
-    .chooseWeapon:hover::after {
-        box-shadow: 1px 1px 0px var(--shadow-spread) rgba(144, 143, 143, 0.1),
-            1px 1px 0px 80px rgba(156, 155, 155, 0.2);
-        transform: scale(1);
-    }
-
-    .ruleButton {
-        cursor: pointer;
-    }
-
-    .ruleButton:hover {
-        --rule-button-color: #fff;
-        background: rgba(0, 0, 0, 0.3);
-    }
-
-    .ruleContainer>button {
-        cursor: pointer;
-    }
-
-    .ruleContainer>button:hover {
-        color: hsl(293, 85%, 54%);
-    }
-
-    .gameStatus>button {
-        cursor: pointer;
-        transition: 0.4s linear;
-    }
-
-    .gameStatus>button:hover {
-        background: #ccc;
-    }
+/* Skeleton computer Choice */
+.computerSkeleton {
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  background: var(--Dark-Text);
+  border-radius: 50%;
+  place-self: center;
+  animation: loading 1s linear infinite alternate-reverse;
 }
 
+@keyframes loading {
+  from {
+    background: var(--Dark-Text);
+  }
+
+  to {
+    background: var(--Header-Outline);
+  }
+}
+
+@media (hover: hover) {
+  .chooseWeapon {
+    cursor: pointer;
+  }
+
+  .chooseWeapon:hover {
+    transform: scale(1.1);
+  }
+
+  .chooseWeapon:hover::after {
+    box-shadow: 1px 1px 0px var(--shadow-spread) rgba(144, 143, 143, 0.1),
+      1px 1px 0px 80px rgba(156, 155, 155, 0.2);
+    transform: scale(1);
+  }
+
+  .ruleButton {
+    cursor: pointer;
+  }
+
+  .ruleButton:hover {
+    --rule-button-color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .ruleContainer>button {
+    cursor: pointer;
+  }
+
+  .ruleContainer>button:hover {
+    color: hsl(293, 85%, 54%);
+  }
+
+  .gameStatus>button {
+    cursor: pointer;
+    transition: 0.4s linear;
+  }
+
+  .gameStatus>button:hover {
+    background: #ccc;
+  }
+}
 
 @media (width > 700px) {
-    .chooseWrapper {
-        --triangle-height: 60%;
-        --triangle-width: 40%;
-        height: 50vh;
-    }
+  .chooseWrapper {
+    --triangle-height: 60%;
+    --triangle-width: 40%;
+    height: 50vh;
+  }
 
-    .chooseWeapon {
-        --shadow-spread: 50px;
-    }
+  .chooseWeapon {
+    --shadow-spread: 50px;
+  }
 
-    .chooseWeapon:nth-child(1) {
-        place-self: center center;
-        position: relative;
-        left: 55px;
-    }
+  .chooseWeapon:nth-child(1) {
+    place-self: center center;
+    position: relative;
+    left: 55px;
+  }
 
-    .chooseWeapon:nth-child(2) {
-        place-self: center center;
-        position: relative;
-        left: -45px;
-    }
+  .chooseWeapon:nth-child(2) {
+    place-self: center center;
+    position: relative;
+    left: -45px;
+  }
 
-    .chooseWeapon:nth-child(3) {
-        place-self: center start;
-        grid-column-start: 2;
-        position: relative;
-        top: -10px;
-        left: -55px;
-    }
+  .chooseWeapon:nth-child(3) {
+    place-self: center start;
+    grid-column-start: 2;
+    position: relative;
+    top: -10px;
+    left: -55px;
+  }
 
-    .gameBackground {
-        padding: 1rem;
-    }
+  .gameBackground {
+    padding: 1rem;
+  }
 
-    .gameBackground img {
-        width: 70px;
-        height: 70px;
-    }
+  .gameBackground img {
+    width: 70px;
+    height: 70px;
+  }
 
-    .ruleButton {
-        margin: 0 0 0 auto;
-    }
+  .ruleButton {
+    margin: 0 0 0 auto;
+  }
 
-    .ruleContainer {
-        width: 55%;
-        max-width: 550px;
-        height: 50%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -40%);
-        border-radius: 5px;
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .ruleContainer {
+    width: 55%;
+    max-width: 550px;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    border-radius: 5px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ruleContainer>h2 {
+    place-self: start start;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .ruleContainer>button {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    place-self: start end;
+  }
+
+  .ruleContainer>img {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    place-self: center;
+  }
+
+  .gameStart {
+    grid-template-areas: "one two three";
+  }
+
+  .resultWrapper {
+    flex-direction: column;
+  }
 
 
-    .ruleContainer>h2 {
-        place-self: start start;
-        font-size: 2rem;
-        letter-spacing: 2px;
-    }
+  .gameStatus {
+    margin: 0;
+  }
 
-    .ruleContainer>button {
-        grid-row-start: 1;
-        grid-column-start: 2;
-        place-self: start end;
-    }
-
-    .ruleContainer>img {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        place-self: center;
-    }
-
-    .gameStart {
-        grid-template-areas: "one two three";
-    }
-
-    .resultWrapper {
-        flex-direction: column;
-    }
-
-
+  .computerSkeleton {
+    width: 130px;
+    height: 130px;
+  }
 }

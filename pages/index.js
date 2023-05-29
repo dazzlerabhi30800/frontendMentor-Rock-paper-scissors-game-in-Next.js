@@ -25,7 +25,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header showRules={showRules} score={score} />
-      <Main showRules={showRules} setShowRules={setShowRules} />
+      <Main
+        setScore={setScore}
+        score={score}
+        showRules={showRules}
+        setShowRules={setShowRules}
+      />
       {showRules && (
         <section className={`${barlow.className}`}>
           <RuleContainer showRules={showRules} setShowRules={setShowRules} />

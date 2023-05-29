@@ -9,13 +9,36 @@ const barlow = Barlow_Semi_Condensed({
   weight: ["600", "700"],
 });
 
-const Main = ({ showRules, setShowRules }) => {
-  const [playerImg, setPlayerImg] = useState(null);
+const Main = ({ showRules, setShowRules, setScore, score }) => {
+  const [action, setAction] = useState();
+  const [gameStart, setGameStart] = useState(false);
+  const [computerChoice, setComputerChoice] = useState(null);
+  const [win, setWin] = useState(null);
   return (
     <>
       <main className={`${styles.main} ${barlow.className}`}>
-        {/* <ChooseWeapon /> */}
-        <GameStart playerImg={playerImg} />
+        {!gameStart && (
+          <ChooseWeapon
+            setGameStart={setGameStart}
+            setAction={setAction}
+            setComputerChoice={setComputerChoice}
+            setScore={setScore}
+            setWin={setWin}
+            score={score}
+          />
+        )}
+        {gameStart && (
+          <GameStart
+            setAction={setAction}
+            setGameStart={setGameStart}
+            gameStart={gameStart}
+            action={action}
+            computerChoice={computerChoice}
+            setComputerChoice={setComputerChoice}
+            win={win}
+            setWin={setWin}
+          />
+        )}
         <button
           disabled={showRules}
           onClick={() => setShowRules((prevState) => (prevState = true))}
