@@ -126,14 +126,14 @@
   transition: 0.4s ease-in-out;
 }
 
-.ruleContainer>h2 {
+.ruleContainer > h2 {
   color: var(--Dark-Text);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.7rem;
 }
 
-.ruleContainer>button {
+.ruleContainer > button {
   outline: none;
   border: none;
   background: transparent;
@@ -168,7 +168,7 @@
   grid-area: three;
 }
 
-.resultWrapper>span {
+.resultWrapper > span {
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -236,13 +236,13 @@
   margin: 10px 0;
 }
 
-.gameStatus>h3 {
+.gameStatus > h3 {
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.gameStatus>button {
+.gameStatus > button {
   border: none;
   outline: none;
   padding: 12px 2rem;
@@ -261,8 +261,8 @@
 
 /* Skeleton computer Choice */
 .computerSkeleton {
-  width: 100px;
-  height: 100px;
+  width: 109px;
+  height: 106px;
   padding: 1rem;
   background: var(--Dark-Text);
   border-radius: 50%;
@@ -304,20 +304,20 @@
     background: rgba(0, 0, 0, 0.3);
   }
 
-  .ruleContainer>button {
+  .ruleContainer > button {
     cursor: pointer;
   }
 
-  .ruleContainer>button:hover {
+  .ruleContainer > button:hover {
     color: hsl(293, 85%, 54%);
   }
 
-  .gameStatus>button {
+  .gameStatus > button {
     cursor: pointer;
     transition: 0.4s linear;
   }
 
-  .gameStatus>button:hover {
+  .gameStatus > button:hover {
     background: #ccc;
   }
 }
@@ -377,19 +377,19 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ruleContainer>h2 {
+  .ruleContainer > h2 {
     place-self: start start;
     font-size: 2rem;
     letter-spacing: 2px;
   }
 
-  .ruleContainer>button {
+  .ruleContainer > button {
     grid-row-start: 1;
     grid-column-start: 2;
     place-self: start end;
   }
 
-  .ruleContainer>img {
+  .ruleContainer > img {
     grid-column-start: 1;
     grid-column-end: 3;
     place-self: center;
@@ -403,13 +403,12 @@
     flex-direction: column;
   }
 
-
   .gameStatus {
     margin: 0;
   }
 
   .computerSkeleton {
-    width: 130px;
-    height: 130px;
+    width: 134px;
+    height: 137px;
   }
 }

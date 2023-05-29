@@ -18,7 +18,6 @@ const ChooseWeapon = ({
     let computerTimeout = setTimeout(() => {
       setComputerChoice(choice);
       let results = getResults(playeraction, choice);
-      console.log(results);
       if (results === "YOU WIN") {
         setWin(results);
         setScore(score + 1);

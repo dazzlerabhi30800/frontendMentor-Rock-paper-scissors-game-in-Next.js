@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "/styles/Main.module.css";
 
 const GameStart = ({
   setAction,
   action,
   setGameStart,
+  gameStart,
   computerChoice,
   setComputerChoice,
   win,

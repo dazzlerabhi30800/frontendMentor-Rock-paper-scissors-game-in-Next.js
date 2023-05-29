@@ -23,6 +23,7 @@ const Main = ({ showRules, setShowRules, setScore, score }) => {
             setAction={setAction}
             setComputerChoice={setComputerChoice}
             setScore={setScore}
+            gameStart={gameStart}
             setWin={setWin}
             score={score}
           />
