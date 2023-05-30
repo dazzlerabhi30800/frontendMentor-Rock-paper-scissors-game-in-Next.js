@@ -39,7 +39,7 @@ const GameStart = ({
           <span>you picked</span>
         </div>
         <div className={styles.gameStatus}>
-          {win !== null ? <h3>{win}</h3> : <h3>Loding Results...</h3>}
+          {win !== null ? <h3>{win}</h3> : <h3>Loading Results...</h3>}
           <button
             disabled={win === null}
             onClick={() => {
